@@ -1,55 +1,129 @@
 <html>
-  <head>
 
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Fixed navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/pages/index">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pages/contact">Contact</a>
-            </li>
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/pages/ourservices">Services</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/pages/About">About <span class="sr-only">(current)</span></a>
-              </li>
-          </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-    </header>
-    <main role="main">
+<head>
 
-      <div class="container">
-   
-        <h2 class="mt-5">It's bare and looking very sad indeed!</h2>
-        <p>The team is in need of your help and assistance.. We need to skin this site and make it look a lot better for our clients.</p>
-        <p>In short... We need to spruce things up a bit!</p>
-        <p><strong>Thank goodness you are here!</strong> Please follow the instructions in the email :-)</p>
-        
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Fixed navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/index">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/contact">Contact</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/ourservices">Services</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Pages
+            </a>
+            <div class="dropdown-menu" id="dropdown" aria-labelledby="navbarDropdown">
+              <p class="dropdown-item" href="#"></p>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/About">About <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
-    </main>
-    <style> body {
+    </nav>
+  </header>
+  <main role="main">
+
+    <div class="container">
+
+
+      <h2 class="mt-5">Weather</h2>
+      <div class="card">
+        <div class="card-header" id="city_name">Melbourne</div>
+        <div class="card-body">
+        
+          <div class="card-title" id="city_title">
+            <h2 id="weather_des"></h2>
+          </div>
+          <h6 class="card-subtitle mb-2 text-muted" id="weather_sub"></h6>
+          <div class="card-text" id="city_info">
+            Loading...
+          </div>
+        </div>
+      </div>
+      <!-- <h2 class="mt-5">It's bare and looking very sad indeed!</h2>
+      <p>The team is in need of your help and assistance.. We need to skin this site and make it look a lot better for
+        our clients.</p>
+      <p>In short... We need to spruce things up a bit!</p>
+      <p><strong>Thank goodness you are here!</strong> Please follow the instructions in the email :-)</p> -->
+
+    </div>
+  </main>
+  <style>
+    body {
       padding-top: 70px;
-    }</style>
-    </body>
-    </html>
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js">
+  </script>
+  <script>
+    $.get('/api/get-html-files', data => {
+      data.map(item => {
+        const itemd = item.split('.')[0]
+        $('#dropdown').append(`<a href="${itemd}" class="dropdown-item">${itemd}</a>`)
+      })
+    })
+
+    var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://community-open-weather-map.p.rapidapi.com/weather?units=metric&mode=json&q=Melbourne,au",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+		"x-rapidapi-key": "5bdf86986dmshbb17203a1f8fce4p16e3e1jsn620d49213f16"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+  setup(response)
+}).fail((data)=>{
+  console.log(JSON.stringify(data))
+});
+
+function setup(data){
+  $('#city_title').before(`<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="...">`)
+  $('#weather_des').html(`${data.weather[0].main} ${data.main.temp_min} ~ ${data.main.temp_max}°C`)
+$('#city_info').html(`Visibility ${data.visibility} m <br> Humidity ${data.main.humidity}% <br> Wind Speed ${data.wind.speed} km/h <br> Wind Degree ${data.wind.deg}°`)
+}
+
+  </script>
+</body>
+
+</html>

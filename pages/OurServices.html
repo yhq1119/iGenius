@@ -24,6 +24,15 @@
             <li class="nav-item">
               <a class="nav-link" href="/pages/ourservices">Services</a>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Pages
+              </a>
+              <div class="dropdown-menu" id="dropdown" aria-labelledby="navbarDropdown">
+                <p class="dropdown-item" href="#"></p>
+              </div>
+            </li>  
             <li class="nav-item">
                 <a class="nav-link" href="/pages/About">About <span class="sr-only">(current)</span></a>
               </li>
@@ -49,5 +58,16 @@
     <style> body {
       padding-top: 70px;
     }</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js">
+    </script>
+  <script>
+     $.get('/api/get-html-files',data=>{
+      data.map(item => {
+        const itemd = item.split('.')[0]
+        $('#dropdown').append(`<a href="${itemd}" class="dropdown-item">${itemd}</a>`)
+      })
+    })
+   
+  </script>
     </body>
     </html>

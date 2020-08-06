@@ -6,7 +6,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header>
+    
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">Fixed navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="/pages/index">Home</a>
             </li>
             <li class="nav-item">
@@ -22,6 +22,15 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/pages/ourservices">Services</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Pages
+              </a>
+              <div class="dropdown-menu" id="dropdown" aria-labelledby="navbarDropdown">
+                <p class="dropdown-item" href="#"></p>
+              </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/pages/About">About <span class="sr-only">(current)</span></a>
@@ -33,7 +42,7 @@
           </form>
         </div>
       </nav>
-    </header>
+  
     <main role="main">
 
       <div class="container">
@@ -48,5 +57,18 @@
     <style> body {
       padding-top: 70px;
     }</style>
+
+  <script>
+    fetch('/api/get-html-files')
+      .then(response => response.json())
+      .then(data => listAll(data));
+
+    const listAll = (data) => {
+      data.map(item => {
+        const itemd = item.split('.')[0]
+        $('#dropdown').append(`<a href="${itemd}" class="dropdown-item">${itemd}</a>`)
+      })
+    }
+  </script>
     </body>
     </html>

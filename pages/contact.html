@@ -2,10 +2,17 @@
 
 <head>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="#">Fixed navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -14,7 +21,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="/pages/index">Home</a>
         </li>
         <li class="nav-item">
@@ -22,6 +29,15 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/pages/ourservices">Services</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Pages
+          </a>
+          <div class="dropdown-menu" id="dropdown" aria-labelledby="navbarDropdown">
+            <p class="dropdown-item" href="#"></p>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/pages/About">About <span class="sr-only">(current)</span></a>
@@ -40,87 +56,109 @@
 
     <h2 class="mt-5">Contact Us</h2>
 
-    <form id="form" method="POST" action="/pages/contact">
-      <div class="form-group">
+    <form id="form" class="need-validation" novalidate method="POST" action="/pages/contact">
+      <div class="form-group" id="name_group">
         <label for="first_name">Name:</label>
-        <input class="form-control" type="text" name="first_name" id="first_name" />
-      </div>
-      <div class="form-group">
+        <input class="form-control" type="text" name="first_name" id="first_name" required />
+       </div>
+      <div class="form-group" id="email_group">
         <label for="email">Email:</label>
-        <input class="form-control" type="text" name="email" id="email" />
+        <input class="form-control" type="text" name="email" id="email" required />
       </div>
-      <div class="form-group">
+      <div class="form-group" id="fnumber_group">
         <label for="favourite_number">Favourite Number:</label>
-        <input class="form-control" type="text" name="favourite_number" id="favourite_number" />
+        <input class="form-control" type="text" name="favourite_number" id="favourite_number" required />
       </div>
-      <div class="form-group">
+      <div class="form-group" id="fcolour_group">
         <label for="favourite_colour">Favourite Colour:</label>
-        <input class="form-control" type="text" name="favourite_colour" id="favourite_colour" />
+        <input class="form-control" type="text" name="favourite_colour" id="favourite_colour" required />
       </div>
       <div class="form-group">
         <button class="btn btn-primary" type="submit">Send</button>
       </div>
     </form>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.js"></script>
 
-    <script>
+    <script defer>
+
       $(document).ready(function () {
+        $.validator.addMethod("colours", function(value, element){
+          const colourss = ['red', 'blue', 'green', 'purple', 'yellow', 'brown', 'grey']
+          return this.optional(element) || colourss.includes(value)
+        },"Invalid colour.")
         //validation here
-        $('#form').submit(function (e) {
-          e.preventDefault()
-          const name = $('#first_name').val()
-          const email = $('#email').val()
-          const fnumber = $('#favourite_number').val()
-          const fcolor = $('#favourite_colour').val()
+        $("#form").validate({
+          rules: {
+            first_name: {
+              required: true,
+              lettersonly:true
+            },
+            email:{
+              required: true,
+              email:true,
+              minlength:10
+            },
+            favourite_number:{
+              digits:true,
+              required:true
+            },
+            favourite_colour:{
+              required: true,
+              lettersonly:true,
+              colours: true
+            }
 
-          validateName(name)
-          validateName(email)
-          validateName(fnumber)
-          validateName(fcolor)
+          },
+          messages: {
+            first_name: {
+              required: 'This field is required.',
+              lettersonly:'No digits allowed.'
+            },
+            email:{
+              required:'This field is required.',
+              email:'Invalid email.',
+              minlength:'At least 10 characters required.'
+            },
+            favourite_number:{
+              required:'This field is required.',
+              digits:'Only digits allowed.'
+            },
+            favourite_colour:{
+              required:'This field is required.',
+              lettersonly:'No digits allowed.',
+              colours:'Invalid colour name.'
+            }
+          }
+        });
 
-        })
-        //favourite_colour - can not contain numbers, and is a required field
-        //favourite_number - can only contain numbers and no letters, and is a required field
-        //email - must be at least 10 characters long, and is a required field
-        //first_name - can not contain numbers, is a required field
       })
 
-      function requiredMessage(element) {
-        $(`"${element}"`).after(`<span class="error">This field is required</span>`)
-      }
 
-      function errorMessage(element, message) {
-        $(`"${element}"`).after(`<span class="error">${message}</span>`)
-      }
 
-      function validateName(name) {
-        if (name.length < 1) {
-          requiredMessage("#first_name")
-        }
-      }
-
-      function validateEmail(email) {
-        if (email.length < 1) {
-          requiredMessage("#first_name")
-        }
-      }
-
-      function validateFavNumber(number) {
-        if (number.length < 1) {
-          requiredMessage("#first_name")
-        }
-      }
-
-      function validateColor(color) {
-        if (color.length < 1) {
-          requiredMessage("#first_name")
-        }
-      }
     </script>
 
   </div>
+
+  <script>
+    $.get('/api/get-html-files',data=>{
+      data.map(item => {
+        const itemd = item.split('.')[0]
+        $('#dropdown').append(`<a href="${itemd}" class="dropdown-item">${itemd}</a>`)
+      })
+    })
+      
+  </script>
   <style>
     body {
       padding-top: 70px;
+    }
+
+    .alert .alert-danger {
+      display: none;
+      margin: 5px;
     }
   </style>
 </body>
